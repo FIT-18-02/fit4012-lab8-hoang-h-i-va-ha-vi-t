@@ -2,6 +2,7 @@
 
 ## 1. Mục tiêu bảo mật
 
+
 Hệ thống trong Lab 8 được xây dựng nhằm đảm bảo:
 
 - Bảo mật nội dung dữ liệu khi truyền qua mạng
