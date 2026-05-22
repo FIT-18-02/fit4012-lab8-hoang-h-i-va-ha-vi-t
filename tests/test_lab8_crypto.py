@@ -208,3 +208,20 @@ def test_recv_exact_local_socket():
     finally:
         server_sock.close()
         client_sock.close()
+
+
+def test_pack_length_rejects_empty_data():
+    with pytest.raises(ValueError):
+        pack_length(b"")
+
+
+def test_recv_exact_rejects_invalid_size():
+    server_sock, client_sock = socket.socketpair()
+
+    try:
+        with pytest.raises(ValueError):
+            recv_exact(server_sock, 0)
+
+    finally:
+        server_sock.close()
+        client_sock.close()
