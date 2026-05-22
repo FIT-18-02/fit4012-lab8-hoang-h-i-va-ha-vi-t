@@ -2,14 +2,14 @@
 
 ## Thông tin nhóm được review
 
-- Tên nhóm: Hải Phạm Hoàng và Hà Việt
+- Tên nhóm: Phạm Hoàng Hải và Hà Việt
 - Repository: fit4012-lab8-hoang-h-i-va-ha-vi-t
 - Người review: Phạm Hoàng Hải
 - Ngày review: 22/05/2026
 
 ---
 
-# Nội dung góp ý nhận được
+## Nội dung góp ý nhận được
 
 1. README còn thiếu mô tả chi tiết về protocol truyền dữ liệu.
 2. Chưa có kiểm tra lỗi khi ciphertext bị thay đổi.
@@ -19,19 +19,19 @@
 
 ---
 
-# Phản hồi và chỉnh sửa của nhóm
+## Phản hồi và chỉnh sửa của nhóm
 
 | Góp ý | Phản hồi của nhóm | File/commit đã sửa |
 |---|---|---|
-| README còn thiếu mô tả protocol truyền dữ liệu | Đã bổ sung packet structure, giải thích từng trường dữ liệu và flow truyền dữ liệu giữa Sender và Receiver | README.md |
-| Chưa có kiểm tra lỗi khi ciphertext bị thay đổi | Đã thêm xử lý phát hiện dữ liệu bị can thiệp thông qua SHA-256 verification | receiver.py |
-| Thiếu test cho packet format và hash verification | Đã thêm test packet parser, test hash mismatch và tampered ciphertext | tests/test_protocol.py |
+| README còn thiếu mô tả protocol truyền dữ liệu | Đã bổ sung packet structure, giải thích từng trường dữ liệu và luồng truyền dữ liệu giữa Sender và Receiver | README.md |
+| Chưa có kiểm tra lỗi khi ciphertext bị thay đổi | Đã bổ sung xử lý phát hiện dữ liệu bị can thiệp thông qua SHA-256 verification | receiver.py |
+| Thiếu test cho packet format và hash verification | Đã bổ sung test packet parser, hash mismatch và tampered ciphertext | tests/test_protocol.py |
 | Cần bổ sung log minh chứng khi Sender và Receiver chạy thành công | Đã bổ sung thư mục logs và lưu log cho cả Sender và Receiver | logs/, sender.py, receiver.py |
 | Nên mô tả rõ hơn vai trò của RSA-OAEP trong hệ thống | Đã cập nhật README và report giải thích RSA-OAEP dùng để bảo vệ DES key khi truyền qua mạng | README.md, report-1page.md |
 
 ---
 
-# Các cải tiến sau peer review
+## Các cải tiến sau peer review
 
 Sau khi nhận góp ý, nhóm đã cải thiện:
 
@@ -41,10 +41,11 @@ Sau khi nhận góp ý, nhóm đã cải thiện:
 - Hoàn thiện logging cho demo
 - Kiểm tra packet length và dữ liệu nhận qua socket
 - Tổ chức lại cấu trúc project rõ ràng hơn
+- Đảm bảo GitHub Actions và pytest chạy thành công
 
 ---
 
-# Tự đánh giá sau chỉnh sửa
+## Tự đánh giá sau chỉnh sửa
 
 | Nội dung | Kết quả |
 |---|---|
@@ -58,10 +59,11 @@ Sau khi nhận góp ý, nhóm đã cải thiện:
 | Có test DES roundtrip | YES |
 | Có log minh chứng | YES |
 | Có sample input/output | YES |
+| GitHub Actions CI pass | YES |
 
 ---
 
-# Kết luận
+## Kết luận
 
 Sau quá trình peer review và chỉnh sửa, nhóm đã hoàn thiện hệ thống truyền dữ liệu an toàn theo đúng yêu cầu của Lab 8:
 
